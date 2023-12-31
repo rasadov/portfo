@@ -20,7 +20,7 @@
                 Since I got to university, I also started learning C++ and Java. 
             </p>
             <div class="fade-in-left">
-                <a href="#contact">
+                <a href="#link-for-nav-3" class="nav-link" data-nav="nav-3">
                     <button>
                         Get In Touch
                     </button>
@@ -29,37 +29,147 @@
         </div>
         
     </div>
-    <div class="container">
-        <div class="container-element">
-            <div style="margin: 50px auto 20px 30px;">
-            <a href="#" class="info-link" data-info="Experience">
-                    Interest
-                </a>
-            </div><br>
-            <div style="margin: 20px auto 20px 30px;">
-                <a class="info-link" data-info="Projects">
-                    Projects
-                </a>
-            </div><br>
-            <div style="margin: 20px auto 50px 30px;">
-            <a class="info-link" data-info="Studying">
-                    Studying
-                </a>
-            </div>
-        </div>
-        <div class="container-element">
-        </div>
-    </div>
     <nav class="nav">
         <div class="left">
-            <a href="#">About</a>
+            <a class="nav-link active-link" data-nav="nav-1">
+                <!-- <div style="width: 250px; text-align: center;"> -->
+                    About
+                <!-- </div> -->
+            </a>
         </div>
         <div class="center">
-            <a href="#">Blog</a>
+            <a class="nav-link" data-nav="nav-2">
+                    Blog
+            </a>
         </div>
         <div class="right">
-            <a href="#">Contact</a>
+            <a class="nav-link" data-nav="nav-3">
+                <!-- <div style="width: 250px; text-align: center;"> -->
+                    Contact
+                <!-- </div> -->
+            </a>
         </div>
     </nav>
+
+    <div class="About page-item fade-in-up" id="nav-1">
+        <div class="container">
+            <div class="container-element" style="width: 100px; margin-bottom: 50px;">
+                <div style="margin: 50px auto 20px 30px; ">
+                    <a class="info-link info-link-active" data-info="info-1">
+                        About
+                    </a>
+                </div><br>
+                <div style="margin: 20px auto 20px 30px; ">
+                    <a class="info-link" data-info="info-2">
+                        Projects
+                    </a>
+                </div><br>
+                <div style="margin: 20px auto 50px 30px; width: 29px;">
+                    <a class="info-link" data-info="info-3">
+                        Social Skills
+                    </a>
+                </div>
+            </div>
+            <div class="container-element">
+                <div class="info-card" id="info-1">
+                    <h1>About</h1>
+                    <p>With an extensive background in Python development, I bring a wealth of experience in creating versatile applications tailored for both academic exploration and business functionality.
+                        My primary expertise lies in Automation and Web Development, where I've played a pivotal role in crafting innovative solutions that seamlessly blend technical precision with practical applications.
+                        In summary, my journey in Python development has been characterized by a rich tapestry of experiences spanning Automation, Web Development, and Data-driven solutions.
+                        From creating impactful applications to contributing to the advancement of technological landscapes, I am committed to pushing the boundaries of what is possible in the world of software development.
+                    </p>
+                </div>
+                <div class="info-card hidden" id="info-2">
+                    <h1>Projects</h1>
+                    <a href="https://github.com/rasadov/News_filterer.git" class="project">
+                        <div class="project">
+                            <div style="height: 1px;"></div>
+                            <h1>News Filterer</h1>
+                            <p>Scraps data from Hacker News and filters it based on points</p>
+                            <div style="height: 1px;"></div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/rasadov/Web-Store.git" class="project">
+                        <div class="project">
+                            <div style="height: 1px;"></div>
+                            <h1>Web Store</h1>
+                            <p>Fun MarketPlace with User Authentification and SQLite Database.</p>
+                            <div style="height: 1px;"></div>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="info-card hidden" id="info-3">
+                    <h1>Social Skills</h1>
+                    <p>As a dedicated software engineer, I recognize the profound impact that effective social skills can have on the success of collaborative projects.
+                        I take pride in my ability to communicate complex technical concepts in a clear and accessible manner, fostering a shared understanding among team members.
+                        In essence, my social skills serve as a bridge between the technical complexities of software development and the diverse individuals involved in our projects.
+                        By combining technical expertise with effective communication, collaboration, and empathy, I contribute not only to the success of our projects but also to the positive and inclusive culture of our team.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog -->
+    <div class="Blog page-item fade-in-up hidden" id="nav-2">
+        {% if length == 0 %}
+        <div class="blog">
+            <div style="text-align: center; height: auto; color: white;">
+                <div style="height: 20px;"></div>
+                <h1>Blog is empty at current moment</h1>
+                <div style="height: 20px;"></div>
+            </div>
+        </div>
+
+        {% else %}
+        {% for topic in blog %}
+        <div class="blog">
+                <div style="text-align: center; height: auto; color: white;">
+                    <div style="height: 20px;"></div>
+                    <h1>Title</h1>
+                    <p>text</p>
+                    <div style="height: 20px;"></div>
+                </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+
+    <!-- Contact -->
+    <div class="Contact page-item fade-in-up hidden" id="nav-3">
+        <div class="blog" id="link-for-nav-3">
+            <div style="height: 20px;"></div>
+            <div class="container-element">
+                <div style="text-align: center; height: auto; color: white; margin-left: auto; margin-right: auto;">
+                    <form method="POST" class="form-create" style="color: white;">
+                    {{ form.hidden_tag() }}
+                    <h1>Contact Form</h1>
+                    <p>Feel free to reach out to me through the following channels:</p>
+                    <div class="input">
+                        {{ form.name(class="input", placeholder="Name") }}
+                    </div>
+                    <div class="input">
+                        {{ form.surname(class="input", placeholder="Surname") }}
+                    </div>
+                    <div class="input">
+                        {{ form.email(class="input", placeholder="Email") }}
+                    </div>
+                    <div class="input" style="height: 230px;">
+                        <textarea name="message" class="input-message"  placeholder="Message"></textarea>
+                    </div>
+                    <div>
+                        {{ form.submit(class="submit-btn") }}
+                    </div>
+                    </form>
+                    <p>I look forward to connecting with you!</p>
+                </div>
+            </div>
+            <div style="height: 20px;"></div>
+        </div>
+    </div>
+    
+
     
 {% endblock %}

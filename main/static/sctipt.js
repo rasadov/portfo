@@ -1,20 +1,34 @@
-const btns = document.querySelectorAll('.info-link')
+document.addEventListener('DOMContentLoaded', function () {
+    const about = document.querySelectorAll('.info-link');
+    about.forEach((card) => {
+        card.addEventListener("click", ()=>{
+            const infoBar = document.getElementById(card.dataset.info)
+            about.forEach((c)=>{c.classList.remove("info-link-active")})
+            card.classList.add("info-link-active")
+            document.querySelectorAll(".info-card").forEach((mi) => {mi.classList.add("hidden")})
+            infoBar.classList.remove("hidden")
+        })
+    })
 
-console.log(btns)
+    const nav = document.querySelectorAll('.nav-link');
+    nav.forEach((card) => {
+        card.addEventListener("click", ()=>{
+            const NavItem = document.getElementById(card.dataset.nav)
+            nav.forEach((c)=>{c.classList.remove("active-link")})
+            card.classList.add("active-link")
+            document.querySelectorAll(".page-item").forEach((mi) => {mi.classList.add("hidden")})
+            NavItem.classList.remove("hidden")
+        })
+    })
 
-btns.forEach((card) => {
-    card.addEventListener("click", ()=>{
-        const infoBar = document.getElementById(card.dataset.info)
-        btns.forEach((c)=>{c.classList.remove("info-link-active")})
-        card.classList.add("info-link-active")
-        document.querySelectorAll(".info-link").forEach((mi) => {mi.classList.add("hidden")})
-        infoBar.classList.remove("hidden")
+    const get_in_touch = document.querySelector('.nav-link');
+    get_in_touch.addEventListener("click", ()=>{
+        nav[3].classList.add('active-link')        
     })
 })
 
 function checkVisibility_up() {
     const elements = document.querySelectorAll('.fade-in-up');
-    console.log(elements)
     elements.forEach(element => {
         const rect = element.getBoundingClientRect();
         const windowHeight = window.innerHeight || document.documentElement.clientHeight;

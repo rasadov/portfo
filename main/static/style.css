@@ -1,3 +1,9 @@
+html{
+
+    scroll-behavior: smooth;
+    
+    }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -68,7 +74,7 @@ div.home {
 }
 
 .home button:hover {
-    transform: translateY(-15px);
+    transform: scale(1.1);
     background: white;
     color: #2f2f2f;  
     cursor:pointer;
@@ -82,10 +88,9 @@ div.home {
 .container {
     display: flex;
     width: 1000px;
-    margin: auto auto 100px auto;
+    margin: auto auto 150px auto;
     background: #2f2f2f;
     border-radius: 15px;
-    height: 300px;
 }
 
 .container a {
@@ -97,16 +102,68 @@ div.home {
 
 
 .container-element {
-    height: 250px;
+    height: auto;
 }
 
 .info-link {
     text-decoration: none;
     cursor: pointer;
+    transition: font-size 0.5s ease-in-out, text-shadow 0.3s ease-in-out;    
+    width: 29px;
 }
 
 .info-link-active {
-    margin-left: 30px;
+    text-shadow: 0px 0px 8px;
+    font-size: 25px !important;
+}
+
+
+.info-card {
+    margin-left: 50px;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+.info-card p {
+    font-size: 20px;
+    width: 800px;
+}
+
+.hidden {
+    display: none;
+    transition: 1s;
+}
+
+.card {
+    text-align: center;
+    width: 120px
+}
+
+a.project{
+    text-decoration: none !important;
+}
+
+div.project{
+    width: auto;
+    height: auto;
+    margin: auto auto 20px auto;
+    text-align: center;
+    background: #3f3f3f;
+    border-radius: 15px;
+    text-decoration: none !important;
+}
+
+.project h1 {
+    font-size: 20px;
+}
+
+.blog {
+    height: auto;
+    width: 1000px;
+    margin: auto auto 150px auto;
+    background: #2f2f2f;
+    border-radius: 15px;
 }
 
 nav {
@@ -116,6 +173,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 100px;
 }
 nav a {
     text-decoration: none;
@@ -124,18 +182,58 @@ nav a {
     margin: 100px;
 }
 
+nav .active-link {
+    color: rgb(0, 123, 247);
+    text-shadow: 0px 0px 16px;
+    text-decoration: none;
+}
+
+.nav-link {
+    cursor: pointer;
+    transition: text-shadow 0.5s;
+}
+
+.nav-link:hover {
+    text-shadow: 0 0 15px;   
+}   
+
+.input {
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+div.input {
+    margin: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-message {
+    border-radius: 15px;
+    width: 400px;
+    text-align: center;
+    font-size: 20px;
+    height: 200px;
+    resize: none;
+}
+
+.submit-btn {
+    background: rgb(0, 157, 255);
+    width: 400px;
+    height: 50px;
+    color: white;
+    border-radius: 20px;
+    font-size: 25px;
+}
 
 img {
     max-width: 100%;
     height: auto;
 }
 
-footer {
-    text-align: center;
-    padding: 1em;
-    background-color: #2f2f2f;
-    color: #fff;
-}
 
 /* Animations */
 .fade-in-up {

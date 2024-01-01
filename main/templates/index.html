@@ -5,15 +5,16 @@
 {% endblock %}
 
 {% block content %}
-
+    <div class="mob-space">
+    </div>
     <div class="home">
         <!-- <img src="../static/code.png" class="fade-in"> -->
         
-        <div style="text-align: center; width: 1000px; margin-left: 100px; margin-right: 100px;">
+        <div class="home-up">
             <h1 class="fade-in-left" style="margin: 0; margin-right: 20px;">Hello, I am<br></h1>
             <h1 class="fade-in-up" style="margin: 0;">Rauf Asadov</h1>
         </div>
-        <div style="text-align: center; margin: auto 0 auto 0">
+        <div class="home-down">
             <p class="fade-in-right">
                 I study at ADA university in Computer Science major. Before getting to university,
                 I worked and still work on different projects in Python. I have worked on Data scraping, Back-end development, Scripting, Automation, Machine Learning and Neural Networks.
@@ -32,9 +33,7 @@
     <nav class="nav">
         <div class="left">
             <a class="nav-link active-link" data-nav="nav-1">
-                <!-- <div style="width: 250px; text-align: center;"> -->
                     About
-                <!-- </div> -->
             </a>
         </div>
         <div class="center">
@@ -44,27 +43,25 @@
         </div>
         <div class="right">
             <a class="nav-link" data-nav="nav-3">
-                <!-- <div style="width: 250px; text-align: center;"> -->
                     Contact
-                <!-- </div> -->
             </a>
         </div>
     </nav>
 
     <div class="About page-item fade-in-up" id="nav-1">
         <div class="container">
-            <div class="container-element" style="width: 100px; margin-bottom: 50px;">
-                <div style="margin: 50px auto 20px 30px; ">
+            <div class="container-element container-links" style="width: 100px; margin-bottom: 50px;">
+                <div class="about-about" style="margin: 50px auto 20px 30px; ">
                     <a class="info-link info-link-active" data-info="info-1">
                         About
                     </a>
                 </div><br>
-                <div style="margin: 20px auto 20px 30px; ">
+                <div class="about-projects" style="margin: 20px auto 20px 30px; ">
                     <a class="info-link" data-info="info-2">
                         Projects
                     </a>
                 </div><br>
-                <div style="margin: 20px auto 50px 30px; width: 29px;">
+                <div class="about-social-skills" style="margin: 20px auto 50px 30px; width: 29px;">
                     <a class="info-link" data-info="info-3">
                         Social Skills
                     </a>
@@ -139,14 +136,14 @@
 
     <!-- Contact -->
     <div class="Contact page-item fade-in-up hidden" id="nav-3">
-        <div class="blog" id="link-for-nav-3">
+        <div class="contact" id="link-for-nav-3">
             <div style="height: 20px;"></div>
             <div class="container-element">
                 <div style="text-align: center; height: auto; color: white; margin-left: auto; margin-right: auto;">
                     <form method="POST" class="form-create" style="color: white;">
                     {{ form.hidden_tag() }}
                     <h1>Contact Form</h1>
-                    <p>Feel free to reach out to me through the following channels:</p>
+                    <p>Feel free to reach out to me by filling this form:</p>
                     <div class="input">
                         {{ form.name(class="input", placeholder="Name") }}
                     </div>

@@ -1,3 +1,205 @@
+@media screen and (max-width: 600px){
+
+    /* html {
+        width: 150px !important;
+    }
+
+    body {
+        width: 150px !important;
+    } */
+
+    .mob-space {
+        height: 60px !important;
+        width: 120px !important;
+        margin: 0px !important;
+    }
+    
+    .home {
+        margin: 20px auto 50px auto !important;
+        /* display: flex !important;
+        flex-direction: column !important; */
+        display: block !important;
+        width: 260px;
+    }
+    
+    .home-up {
+        margin: auto !important;
+        width: 260px !important;
+        margin-bottom: 40px !important;
+    }
+    .home-down {
+        margin: auto !important;
+        width: 220px !important;
+    }
+
+    .home button {
+        margin: 0px !important;
+        font-size: 10px !important;
+        width: 180px !important;
+        height: 40px !important;
+        margin-top: 30px !important;
+        background: rgb(0, 123, 255) !important;
+    }
+    
+
+    .home h1 {
+        font-size: 40px !important;
+        width: 260px !important;
+
+    }
+    
+    .home p {
+        width: 220px !important;
+        font-size: 10px !important;
+        text-align: center !important;
+    }
+
+    .nav {
+        width: 98% !important;
+        margin-bottom: 60px !important;
+        padding: 15px 0px 15px 10px !important;
+        
+    }
+
+    .nav-link {
+        padding: 0px !important;
+    }
+
+    nav a {
+        font-size: 20px !important;
+        margin: 20px !important;
+    }
+
+    .container {
+        width: 300px !important;
+        height: auto;
+        text-align: center !important;
+        display: block !important;
+    }
+    
+    .container-element {
+        display: flex;
+        margin-bottom: 12px !important;
+    }
+
+    .container-links {
+        height: 30px;
+    }
+    
+    .info-card h1, .info-card p {
+        width: 290px !important;
+        margin-right: 20px;
+        font-size: 10px !important;
+
+    }
+    .container-links a {
+        font-size: 15px !important;
+    }
+    
+    .About {
+        width: 300px;
+        /* margin: 0px !important; */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .about-about {
+        margin: 10px 40px 10px 30px !important;
+    }
+
+
+    .about-projects {
+        margin: 10px 40px 10px 10px !important;
+        /* margin-left: 20px !important; */
+    }
+    .about-social-skills {
+        margin-left: 40px !important;
+        margin: 10px !important;
+        /* margin-left: 20px !important; */
+    }
+
+    .info-card {
+        margin: 5px !important;
+    }
+
+    .blog {
+        width: 340px !important;
+    }
+
+    
+    
+    .project {
+        width: 290px !important;
+        height: auto !important;
+    }
+    .project h1 , .project p {
+        width: 290px !important;
+        margin: 5px !important;
+    }
+    a.project {
+        width: 290px !important;
+    }
+    div.project {
+        margin: 20px 0 !important;    
+    }
+    
+    .contact  {
+    height: auto;
+    width: 350px !important;
+    margin: auto auto 150px auto;
+    background: #2f2f2f;
+    border-radius: 15px;
+    }
+
+    .contact h1, .contact p {
+    font-size: 16px !important;
+    }
+    
+    .input {
+        width: 240px !important;
+        height: 30px;
+        font-size: 15px;
+    }
+    
+    div.input {
+        margin: 25px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    
+    .input-message {
+        width: 240px !important;
+        font-size: 20px;
+        height: 120px;
+        resize: none;
+    }
+
+    .submit-btn {
+        width: 240px !important;
+        height: 50px;
+        font-size: 25px;
+    }
+
+
+    .Contact {
+        width: 340px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .Blog {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        width: 340px !important;
+    }
+
+}
+
+
 html{
 
     scroll-behavior: smooth;
@@ -9,11 +211,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #202020;
-    /* background-image: url(background.jpg);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;     */
 }
 
 
@@ -39,9 +236,16 @@ div.home {
     display: flex;
 }
 
-.home img {
-    width: 775px;
-    height: 558px;
+.home-up {
+    text-align: center; 
+    width: 1000px;
+    margin-left: 100px; 
+    margin-right: 100px;
+}
+
+.home-down {
+    text-align: center;
+    margin: auto 0 auto 0
 }
 
 .home h1 {
@@ -165,6 +369,16 @@ div.project{
     background: #2f2f2f;
     border-radius: 15px;
 }
+
+
+.contact {
+    height: auto;
+    width: 1000px;
+    margin: auto auto 150px auto;
+    background: #2f2f2f;
+    border-radius: 15px;
+}
+
 
 nav {
     background-color: #2f2f2f;

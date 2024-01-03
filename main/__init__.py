@@ -5,13 +5,13 @@ from flask_login import LoginManager
 
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = 'fPfKdLHcBn7JOCeDxPORUns0ZSo9i4HY'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///market.db'
+app.config["SECRET_KEY"] = "fPfKdLHcBn7JOCeDxPORUns0ZSo9i4HY"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///market.db"
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.login_view = 'login'
+login_manager.login_view = "login"
 
 
 from main import routes

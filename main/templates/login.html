@@ -3,6 +3,7 @@
 <title>login</title>
 {% endblock %}
 
+{% if not current_user.is_authenticated %}
 {% block content %}
 <div style="text-align: center;">
 
@@ -40,3 +41,12 @@
     
 </div>
 {% endblock %}
+{% else %}
+<div style="text-align: center;">
+
+    <div style="color: white; font-size: 25px;">
+        <h1>You are already logged in</h1>
+    </div>
+</div>
+
+{% endif %}

@@ -1,3 +1,4 @@
+{% if current_user.is_authenticated %}
 {% extends 'base.html' %}
 
 {% block title %}
@@ -8,4 +9,43 @@ Create Project
 
 {% block content %}
 
+<div style="text-align: center;">
+    <div style="color: white;">
+        <h1>Create Project</h1>
+    </div>
+    <div>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+
+            <div style="margin: 30px;">
+                {{ form.title(class='input', placeholder='Title')}}
+            </div>
+            <div style="margin: 30px;">
+                {{ form.link(class='input', placeholder='Link')}}
+
+            </div>
+            <div style="margin: 30px;">
+                <textarea class="input-message" id="text" name="text" cols="30" rows="10" placeholder='Text'>{% if form.text.data %}{{ form.text.data }}{% endif %}</textarea>
+            </div>
+
+            
+            <div style="margin: 30px;">
+                {{ form.submit(class='submit-btn')}}
+            </div>
+            
+
+        </form>
+    </div>
+    <div class="home" style="text-align: center !important; display: block; margin: 0 auto !important;">
+        <a href="{{ url_for('admin') }}">
+            <button>
+                Back to admin
+            </button>
+        </a>
+    </div>
+</div>
+
 {% endblock %}
+{% else %}
+<h1>404 Error</h1>
+{% endif %}

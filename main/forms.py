@@ -1,6 +1,6 @@
 from main.models import Admin
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, ValidationError
+from wtforms import StringField, SubmitField, PasswordField, ValidationError, IntegerField
 from wtforms.validators import DataRequired, Email, Length
 
 
@@ -16,11 +16,20 @@ class Article_Form(FlaskForm):
     text = StringField(label='Surname',validators=[DataRequired()])
     submit = SubmitField(label='Submit')
 
+
 class Project_Form(FlaskForm):
     title = StringField(label='Name',validators=[DataRequired()])
     text = StringField(label='Surname',validators=[DataRequired()])
     link = StringField(label='Surname',validators=[DataRequired()])
     submit = SubmitField(label='Submit')
+
+class Remove_Article_Form(FlaskForm):
+    id = IntegerField()
+    submit = SubmitField(label='Remove Article')
+
+class Remove_Project_Form(FlaskForm):
+    id = IntegerField()
+    submit = SubmitField(label='Remove Project')
 
 class LoginForm(FlaskForm):
     def validate_username(self, username_to_check):

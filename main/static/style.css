@@ -1,25 +1,29 @@
 @media screen and (max-width: 600px){
+    .space {
+        height: 50px !important;
+    }
 
     .mob-space {
         height: 60px !important;
-        width: 120px !important;
         margin: 0px !important;
     }
     
     .home {
-        margin: 20px auto 50px auto !important;
+        margin: 0px auto 50px auto !important;
         display: block !important;
-        width: 260px;
+        /* width: 260px; */
     }
     
     .home-up {
         margin: auto !important;
-        width: 260px !important;
+        width: 100% !important;
         margin-bottom: 40px !important;
+        text-align: center;
     }
     .home-down {
         margin: auto !important;
-        width: 220px !important;
+        width: 400px !important;
+        text-align: center;
     }
 
     .home button {
@@ -39,9 +43,13 @@
     }
     
     .home p {
-        width: 220px !important;
+        width: 250px !important;
         font-size: 20px !important;
         text-align: center !important;
+    }
+
+    .home-down p {
+        width: 400px !important;
     }
 
     .nav {
@@ -65,6 +73,7 @@
         height: auto;
         text-align: center !important;
         display: block !important;
+        margin: auto;
     }
     
     .container-element {
@@ -76,20 +85,23 @@
         height: 30px;
     }
     
+    .info-card {
+        width: 360px !important;
+        margin: auto;
+    }
+
     .info-card h1, .info-card p {
-        width: 290px !important;
-        margin-right: 20px;
+        width: 300px !important;
+        margin: auto;
     }
 
     .info-card h1 {
         font-size: 30px !important;
-        margin: 20px !important;
-
+        margin-bottom: 40px !important;
     }
 
     .info-card p {
         font-size: 20px !important;
-        margin: 20px !important;
     }
 
     .container-links a {
@@ -128,18 +140,26 @@
     
     
     .project {
-        width: 330px !important;
+        margin: auto;
+        width: 320px !important;
         height: auto !important;
+        text-align: center;
     }
     .project h1 , .project p {
-        width: 320px !important;
+        width: 300px !important;
         margin: 5px !important;
     }
     a.project {
-        width: 320px !important;
+        width: 320px;
+        text-align: center !important;
     }
+
+    .proj {
+        width: 360px !important; 
+    }
+
     div.project {
-        margin: 20px 0 !important;    
+        border-radius: 30px !important;    
     }
     
     .contact  {
@@ -230,7 +250,7 @@ body {
 
 div.home {
     text-align: right;
-    margin: 200px auto 200px auto;
+    margin: 0 auto 200px auto;
     display: flex;
 }
 
@@ -251,7 +271,6 @@ div.home {
     color: white;
     text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.9);
     font-size: 140px;
-    margin: 200px auto 200px auto;
 }
 
 .home p {
@@ -288,7 +307,6 @@ div.home {
 }
 
 .container {
-    display: flex;
     width: 1000px;
     margin: auto auto 150px auto;
     background: #2f2f2f;
@@ -300,11 +318,6 @@ div.home {
     border: none;
     font-size: 20px;
     color:white;
-}
-
-
-.container-element {
-    height: auto;
 }
 
 .info-link {
@@ -321,15 +334,15 @@ div.home {
 
 
 .info-card {
-    margin-left: 50px;
-    margin-top: 20px;
     color: white;
+    width: 1000px;
     text-align: center;
 }
 
 .info-card p {
     font-size: 20px;
     width: 800px;
+    margin: auto;
 }
 
 .hidden {
@@ -346,14 +359,25 @@ a.project{
     text-decoration: none !important;
 }
 
+.proj {
+    width: 500px; 
+    text-align: center; 
+    margin: 20px auto;
+}
+
 div.project{
-    width: auto;
     height: auto;
-    margin: auto auto 20px auto;
+    width: 500px;
+    margin: 30px auto;
     text-align: center;
     background: #3f3f3f;
     border-radius: 15px;
     text-decoration: none !important;
+}
+
+.project h1, .project p {
+    margin: auto;
+    width: 400px;
 }
 
 .project h1 {

@@ -1,15 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const about = document.querySelectorAll('.info-link');
-    about.forEach((card) => {
-        card.addEventListener("click", ()=>{
-            const infoBar = document.getElementById(card.dataset.info)
-            about.forEach((c)=>{c.classList.remove("info-link-active")})
-            card.classList.add("info-link-active")
-            document.querySelectorAll(".info-card").forEach((mi) => {mi.classList.add("hidden")})
-            infoBar.classList.remove("hidden")
-        })
-    })
-
     const nav = document.querySelectorAll('.nav-link');
     nav.forEach((card) => {
         card.addEventListener("click", ()=>{

@@ -5,14 +5,14 @@
 {% endblock %}
 
 {% block content %}
-    <div class="mob-space">
-    </div>
-    <div class="home">
-        <!-- <img src="../static/code.png" class="fade-in"> -->
-        
-        <div class="home-up">
-            <h1 class="fade-in-left" style="margin: 0; margin-right: 20px;">Hello, I am<br></h1>
-            <h1 class="fade-in-up" style="margin: 0;">Rauf Asadov</h1>
+<div class="space" style="height: 200px;"></div>
+<div class="home">
+    <!-- <img src="../static/code.png" class="fade-in"> -->
+    <div class="home-up">
+            <div class="mob-space">
+            </div>
+            <h1 class="fade-in-left" style="margin: 0 auto;">Hello, I am<br></h1>
+            <h1 class="fade-in-up" style="margin: 0 auto;">Rauf Asadov</h1>
         </div>
         <div class="home-down">
             <p class="fade-in-right">
@@ -50,68 +50,61 @@
 
     <div class="About page-item fade-in-up" id="nav-1">
         <div class="container">
-            <div class="container-element container-links" style="width: 100px; margin-bottom: 50px;">
-                <div class="about-about" style="margin: 50px auto 20px 30px; ">
-                    <a class="info-link info-link-active" data-info="info-1">
-                        About
-                    </a>
-                </div><br>
-                <div class="about-projects" style="margin: 20px auto 20px 30px; ">
-                    <a class="info-link" data-info="info-2">
-                        Projects
-                    </a>
-                </div><br>
-                <div class="about-social-skills" style="margin: 20px auto 50px 30px; width: 29px;">
-                    <a class="info-link" data-info="info-3">
-                        Social Skills
-                    </a>
-                </div>
-            </div>
-            <div class="container-element">
-                <div class="info-card" id="info-1">
-                    <h1>About</h1>
-                    <p>With an extensive background in Python development, I bring a wealth of experience in creating versatile applications tailored for both academic exploration and business functionality.<br><br>
+            <div style="height: 20px;"></div>
+            <div class="info-card">
+                <h1>Experience</h1>
+                <p>With an extensive background in Python development, I bring a wealth of experience in creating versatile applications tailored for both academic exploration and business functionality.<br><br>
                         My primary expertise lies in Automation and Web Development, where I've played a pivotal role in crafting innovative solutions that seamlessly blend technical precision with practical applications.<br><br>
                         In summary, my journey in Python development has been characterized by a rich tapestry of experiences spanning Automation, Web Development, and Data-driven solutions.<br><br>
                         From creating impactful applications to contributing to the advancement of technological landscapes, I am committed to pushing the boundaries of what is possible in the world of software development.<br><br>
-                    </p>
+                </p>
+            </div>
+            <div style="height: 20px;"></div>
+        </div>
+        <div class="container fade-in-up">
+            <div style="height: 20px;"></div>
+            <div class="info-card">
+                <h1>Projects</h1>
+                {% if amount_of_projects == 0 %}
+                <div style="text-align: center; height: auto; color: white;">
+                    <div style="height: 20px;"></div>
+                        <h1>There are no Projects at the current moment</h1>
+                    <div style="height: 20px;"></div>
                 </div>
-                <div class="info-card hidden" id="info-2">
-                    <h1>Projects</h1>
-                    {% if plength == 0 %}
-                    <div style="text-align: center; height: auto; color: white;">
-                        <div style="height: 20px;"></div>
-                            <h1>There are no Projects at the current moment</h1>
-                        <div style="height: 20px;"></div>
-                    </div>
-                    {% else %}
-                    {% for i in projects %}
-                    <a href="{{ i.link }}" class="project">
-                        <div class="project">
-                            <div style="height: 1px;"></div>
+                {% else %}
+                {% for i in projects %}
+                <a href="{{ i.link }}" class="project">
+                    <div class="proj">
+                        <div class="project" style="margin: auto !important;">
+                            <div style="height: 20px;"></div>
                             <h1>{{ i.title }}</h1>
                             <p>{{ i.text }}</p>
-                            <div style="height: 1px;"></div>
+                            <div style="height: 20px;"></div>
                         </div>
-                    </a>
-                    {% endfor %}
-                    {% endif %}
-                </div>
-                <div class="info-card hidden" id="info-3">
-                    <h1>Social Skills</h1>
-                    <p>As a dedicated software engineer, I recognize the profound impact that effective social skills can have on the success of collaborative projects.<br><br>
+                    </div>
+                </a>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div style="height: 20px;"></div>
+        </div>
+        <div class="container fade-in-up">
+            <div class="info-card">
+                <div style="height: 20px;"></div>
+                <h1>Social Skills</h1>
+                <p>As a dedicated software engineer, I recognize the profound impact that effective social skills can have on the success of collaborative projects.<br><br>
                         I take pride in my ability to communicate complex technical concepts in a clear and accessible manner, fostering a shared understanding among team members.<br><br>
                         In essence, my social skills serve as a bridge between the technical complexities of software development and the diverse individuals involved in our projects.<br><br>
                         By combining technical expertise with effective communication, collaboration, and empathy, I contribute not only to the success of our projects but also to the positive and inclusive culture of our team.<br><br>
-                    </p>
-                </div>
+                </p>
+                <div style="height: 20px;"></div>
             </div>
         </div>
     </div>
 
     <!-- Blog -->
     <div class="Blog page-item fade-in-up hidden" id="nav-2">
-        {% if length == 0 %}
+        {% if amount_of_articles == 0 %}
         <div class="blog">
             <div style="text-align: center; height: auto; color: white;">
                 <div style="height: 20px;"></div>
@@ -121,15 +114,16 @@
         </div>
 
         {% else %}
-        {% for topic in blog %}
-        <div class="blog">
-                <div style="text-align: center; height: auto; color: white;">
-                    <div style="height: 20px;"></div>
-                    <h1>Title</h1>
-                    <p>text</p>
-                    <div style="height: 20px;"></div>
-                </div>
+        {% for i in blog %}
+        <div class="blog" style="color: white;  max-width: 1000px; text-align: center;">
+            <div style="height: 20px;"></div>
+            <h1>{{ i.title }}</h1>
+            <p style="width: 480px !important; height: auto !important; margin: 10px auto !important;">{{ i.text }}</p>
+            <div style="height: 1px;"></div>
+            <div style="height: 20px;"></div>
+            <div>
         </div>
+
         {% endfor %}
         {% endif %}
     </div>

@@ -1,11 +1,42 @@
+{% if current_user.is_authenticated %}
 {% extends 'base.html' %}
 
 {% block title %}
 <title>
-    Create Blog
+Create Project
 </title>
 {% endblock %}
 
 {% block content %}
 
+<div style="text-align: center; color: white;">
+    <div>
+        <h1>Write Blog</h1>
+    </div>
+    <div style="margin: 30px;">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.title(class="input", placeholder='Title') }}
+            </div>
+            <div style="margin: 30px;">
+                <textarea class="input-message" id="text" name="text" cols="30" rows="10" placeholder='Text'>{% if form.text.data %}{{ form.text.data }}{% endif %}</textarea>
+            </div>
+            <div>
+                {{ form.submit(class="submit-btn") }}
+            </div>
+        </form>
+    </div>
+    <div class="home" style="text-align: center !important; display: block; margin: 0 auto !important;">
+        <a href="{{ url_for('admin') }}">
+            <button>
+                Back to admin
+            </button>
+        </a>
+    </div>
+</div>
+
 {% endblock %}
+{% else %}
+<h1>404 Error</h1>
+{% endif %}

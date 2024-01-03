@@ -1,3 +1,4 @@
+{% if current_user.is_authenticated %}
 {% extends 'base.html' %}
 {% block title %}
 <title>admin</title>
@@ -22,18 +23,34 @@
 
     <div class="edit-card" id="edit-1"> <!-- Blog -->
         <div> <!-- blog posting form -->
-
+            <div style="text-align: center; margin: 40px;"> <!-- projects posting form -->
+                <a href="{{ url_for('create_blog') }}">
+                    <button style="width: 200px; height: 40px; background: rgb(0, 207, 0); border: 0; border-radius: 25px; color: white; font-size: 20px;">
+                        Write Blog
+                    </button>
+                </a>
+            </div>
         </div>
         <div> <!-- blog management form -->
-            {% if length != 0 %}
-            {% for i in blogs %}
-            <div class="blog">
-                <div style="text-align: center; height: auto; color: white;">
-                    <div style="height: 20px;"></div>
-                    <h1>Title</h1>
-                    <p>text</p>
-                    <div style="height: 20px;"></div>
+            {% if amount_of_articles != 0 %}
+            {% for i in blog %}
+            <div class="blog" style="color: white;  max-width: 1000px; text-align: center;">
+                <div style="height: 20px;"></div>
+                <h1>{{ i.title }}</h1>
+                <p style="width: 480px !important; height: auto !important; margin: 10px auto !important;">{{ i.text }}</p>
+                <div style="height: 1px;"></div>
+                <div style="height: 20px;"></div>
+                <div>
+                    <a href="{{ url_for('edit_blog',id=i.id)}} ">
+                        <button style="width: 120px; height: 30px; background: rgb(0, 115, 255); color: white; border: 0; border-radius: 15px;">Edit</button>
+                    </a>
                 </div>
+                <div style="height: 10px;"></div>
+                <form method="POST">
+                    {{ remove_article.hidden_tag() }}
+                    {{ remove_article.id(value=i.id, class="hidden") }}
+                    {{ remove_article.submit(class="remove-btn") }}
+                </form>
             </div>
 
 
@@ -55,24 +72,39 @@
     </div>
 
     <div class="edit-card hidden" id="edit-2"> <!-- projects -->
-        <div> <!-- projects posting form -->
-            <a href="{{ url_for('create_blog') }}">
-                <button style="width: 200px; height: 40px; background: rgb(0, 207, 0);">
+        <div style="text-align: center; margin: 40px;"> <!-- projects posting form -->
+            <a href="{{ url_for('create_project') }}">
+                <button style="width: 200px; height: 40px; background: rgb(0, 207, 0); border: 0; border-radius: 25px; color: white; font-size: 20px;">
                     Create Project
                 </button>
             </a>
         </div>
         <div> <!-- projects management form -->
-            {% if plength != 0 %}
+            {% if amount_of_projects != 0 %}
             {% for i in projects %}
-            <a href="{{ i.link }}" class="project" style="width: 500px;">
-                <div class="project" style="color: white; width: 500px;">
-                    <div style="height: 1px;"></div>
-                    <h1>{{ i.title }}</h1>
-                    <p>{{ i.text }}</p>
-                    <div style="height: 1px;"></div>
-                </div>
-            </a>
+            <div style="text-align: center;">
+
+                <a href="{{ i.link }}" class="project" style="width: 500px;">
+                    <div class="project" style="color: white; width: 500px;">
+                        <div style="height: 20px;"></div>
+                        <h1>{{ i.title }}</h1>
+                        <p style="width: 480px !important; height: auto !important; margin: 10px;">{{ i.text }}</p>
+                        <div style="height: 20px;"></div>
+                    </div>
+                    <div style="margin: 20px;">
+                        <a href="{{ url_for('edit_project',id=i.id)}} ">
+                            <button style="width: 120px; height: 30px; background: rgb(0, 115, 255); color: white; border: 0; border-radius: 15px;">Edit</button>
+                        </a>
+                        <form method="POST">
+                            {{ remove_project.hidden_tag() }}
+                            {{ remove_project.id(value=i.id, class="hidden") }}
+                            {{ remove_project.submit(class="remove-btn") }}
+                        </form>
+                        
+                    </div>
+                </a>
+            </div>
+                
             {% endfor %}
             
             {% else %}
@@ -95,3 +127,6 @@
 <script src="../static/script-admin.js"></script>
 <link rel="stylesheet" href="../static/style-admin.css">
 {% endblock %}
+{% else %}
+<h1>404 Error</h1>
+{% endif %}

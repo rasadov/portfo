@@ -1,3 +1,12 @@
 .edit-active {
     text-shadow: 0 0 12px;
 }
+
+.remove-btn {
+    width: 120px;
+    height: 30px;
+    background:red;
+    color: white;
+    margin: 10px;
+    border-radius: 25px;
+}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>login</title>
+{% endblock %}
+
+{% block content %}
+<div style="text-align: center;">
+
+    <div style="color: white; font-size: 25px;">
+        <h1>Login</h1>
+    </div>
+    
+    <div>
+        
+        <form method="POST" style="color:white">
+            {{ form.hidden_tag() }}
+            <div style="color: white; font-size: 25px; margin: 20px;">
+                {{ form.username.label() }}
+            </div>
+            
+            
+            <div style="margin: 20px;">
+                {{ form.username(class="input", placeholder="User Name") }}
+            </div>
+            
+            
+            <div style="color: white; font-size: 25px; margin: 20px;">
+                {{ form.password.label() }}
+            </div>
+            
+            <div style="margin: 20px;">
+                {{ form.password(class="input", placeholder="Password") }}
+            </div>
+            <div style="margin: 30px;">
+                {{ form.submit(class="submit-btn") }}
+            </div>
+            
+        </form>
+    </div>
+    
+</div>
+{% endblock %}

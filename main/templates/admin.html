@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>admin</title>
+{% endblock %}
+
+{% block content %}
+
+
+<div>
+    <nav class="nav">
+        <div style="width: 50%; text-align: center;">
+            <a class="edit edit-active nav-link" data-edit="edit-1">
+                    Blog
+            </a>
+        </div>
+        <div style="width: 50%; text-align: center;">
+            <a class="edit nav-link" data-edit="edit-2">
+                    Projects
+            </a>
+        </div>
+    </nav>
+
+    <div class="edit-card" id="edit-1"> <!-- Blog -->
+        <div> <!-- blog posting form -->
+
+        </div>
+        <div> <!-- blog management form -->
+            {% if length != 0 %}
+            {% for i in blogs %}
+            <div class="blog">
+                <div style="text-align: center; height: auto; color: white;">
+                    <div style="height: 20px;"></div>
+                    <h1>Title</h1>
+                    <p>text</p>
+                    <div style="height: 20px;"></div>
+                </div>
+            </div>
+
+
+            {% endfor %}
+            
+            {% else %}
+            <div class="blog">
+                <div style="text-align: center; height: auto; color: white; margin-top: 20px">
+                    <div style="height: 20px;"></div>
+                    <h1>Blog is empty at current moment</h1>
+                    <div style="height: 20px;"></div>
+                </div>
+            </div>        
+            
+            {% endif %}
+        </div>    
+        
+        
+    </div>
+
+    <div class="edit-card hidden" id="edit-2"> <!-- projects -->
+        <div> <!-- projects posting form -->
+            <a href="{{ url_for('create_blog') }}">
+                <button style="width: 200px; height: 40px; background: rgb(0, 207, 0);">
+                    Create Project
+                </button>
+            </a>
+        </div>
+        <div> <!-- projects management form -->
+            {% if plength != 0 %}
+            {% for i in projects %}
+            <a href="{{ i.link }}" class="project" style="width: 500px;">
+                <div class="project" style="color: white; width: 500px;">
+                    <div style="height: 1px;"></div>
+                    <h1>{{ i.title }}</h1>
+                    <p>{{ i.text }}</p>
+                    <div style="height: 1px;"></div>
+                </div>
+            </a>
+            {% endfor %}
+            
+            {% else %}
+            <div class="projects">
+                <div style="text-align: center; height: auto; color: white; margin-top: 20px">
+                    <div style="height: 20px;"></div>
+                    <h1>There are no projects at current moment</h1>
+                    <div style="height: 20px;"></div>
+                </div>
+            </div>        
+            
+            {% endif %}
+        </div>    
+        
+        
+    </div>
+
+</div>
+    
+<script src="../static/script-admin.js"></script>
+<link rel="stylesheet" href="../static/style-admin.css">
+{% endblock %}

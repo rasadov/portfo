@@ -70,38 +70,39 @@
             <div class="container-element">
                 <div class="info-card" id="info-1">
                     <h1>About</h1>
-                    <p>With an extensive background in Python development, I bring a wealth of experience in creating versatile applications tailored for both academic exploration and business functionality.
-                        My primary expertise lies in Automation and Web Development, where I've played a pivotal role in crafting innovative solutions that seamlessly blend technical precision with practical applications.
-                        In summary, my journey in Python development has been characterized by a rich tapestry of experiences spanning Automation, Web Development, and Data-driven solutions.
-                        From creating impactful applications to contributing to the advancement of technological landscapes, I am committed to pushing the boundaries of what is possible in the world of software development.
+                    <p>With an extensive background in Python development, I bring a wealth of experience in creating versatile applications tailored for both academic exploration and business functionality.<br><br>
+                        My primary expertise lies in Automation and Web Development, where I've played a pivotal role in crafting innovative solutions that seamlessly blend technical precision with practical applications.<br><br>
+                        In summary, my journey in Python development has been characterized by a rich tapestry of experiences spanning Automation, Web Development, and Data-driven solutions.<br><br>
+                        From creating impactful applications to contributing to the advancement of technological landscapes, I am committed to pushing the boundaries of what is possible in the world of software development.<br><br>
                     </p>
                 </div>
                 <div class="info-card hidden" id="info-2">
                     <h1>Projects</h1>
-                    <a href="https://github.com/rasadov/News_filterer.git" class="project">
+                    {% if plength == 0 %}
+                    <div style="text-align: center; height: auto; color: white;">
+                        <div style="height: 20px;"></div>
+                            <h1>There are no Projects at the current moment</h1>
+                        <div style="height: 20px;"></div>
+                    </div>
+                    {% else %}
+                    {% for i in projects %}
+                    <a href="{{ i.link }}" class="project">
                         <div class="project">
                             <div style="height: 1px;"></div>
-                            <h1>News Filterer</h1>
-                            <p>Scraps data from Hacker News and filters it based on points</p>
+                            <h1>{{ i.title }}</h1>
+                            <p>{{ i.text }}</p>
                             <div style="height: 1px;"></div>
                         </div>
                     </a>
-                    <a href="https://github.com/rasadov/Web-Store.git" class="project">
-                        <div class="project">
-                            <div style="height: 1px;"></div>
-                            <h1>Web Store</h1>
-                            <p>Fun MarketPlace with User Authentification and SQLite Database.</p>
-                            <div style="height: 1px;"></div>
-                        </div>
-                    </a>
-                    
+                    {% endfor %}
+                    {% endif %}
                 </div>
                 <div class="info-card hidden" id="info-3">
                     <h1>Social Skills</h1>
-                    <p>As a dedicated software engineer, I recognize the profound impact that effective social skills can have on the success of collaborative projects.
-                        I take pride in my ability to communicate complex technical concepts in a clear and accessible manner, fostering a shared understanding among team members.
-                        In essence, my social skills serve as a bridge between the technical complexities of software development and the diverse individuals involved in our projects.
-                        By combining technical expertise with effective communication, collaboration, and empathy, I contribute not only to the success of our projects but also to the positive and inclusive culture of our team.
+                    <p>As a dedicated software engineer, I recognize the profound impact that effective social skills can have on the success of collaborative projects.<br><br>
+                        I take pride in my ability to communicate complex technical concepts in a clear and accessible manner, fostering a shared understanding among team members.<br><br>
+                        In essence, my social skills serve as a bridge between the technical complexities of software development and the diverse individuals involved in our projects.<br><br>
+                        By combining technical expertise with effective communication, collaboration, and empathy, I contribute not only to the success of our projects but also to the positive and inclusive culture of our team.<br><br>
                     </p>
                 </div>
             </div>
@@ -168,5 +169,6 @@
     </div>
     
 
+    <script src="../static/script.js"></script>
     
 {% endblock %}

@@ -1,13 +1,5 @@
 @media screen and (max-width: 600px){
 
-    /* html {
-        width: 150px !important;
-    }
-
-    body {
-        width: 150px !important;
-    } */
-
     .mob-space {
         height: 60px !important;
         width: 120px !important;
@@ -16,8 +8,6 @@
     
     .home {
         margin: 20px auto 50px auto !important;
-        /* display: flex !important;
-        flex-direction: column !important; */
         display: block !important;
         width: 260px;
     }
@@ -34,7 +24,7 @@
 
     .home button {
         margin: 0px !important;
-        font-size: 10px !important;
+        font-size: 17px !important;
         width: 180px !important;
         height: 40px !important;
         margin-top: 30px !important;
@@ -50,7 +40,7 @@
     
     .home p {
         width: 220px !important;
-        font-size: 10px !important;
+        font-size: 20px !important;
         text-align: center !important;
     }
 
@@ -67,11 +57,11 @@
 
     nav a {
         font-size: 20px !important;
-        margin: 20px !important;
+        margin: 40px !important;
     }
 
     .container {
-        width: 300px !important;
+        width: 360px !important;
         height: auto;
         text-align: center !important;
         display: block !important;
@@ -89,38 +79,46 @@
     .info-card h1, .info-card p {
         width: 290px !important;
         margin-right: 20px;
-        font-size: 10px !important;
+    }
+
+    .info-card h1 {
+        font-size: 30px !important;
+        margin: 20px !important;
 
     }
+
+    .info-card p {
+        font-size: 20px !important;
+        margin: 20px !important;
+    }
+
     .container-links a {
-        font-size: 15px !important;
+        font-size: 25px !important;
     }
     
     .About {
-        width: 300px;
-        /* margin: 0px !important; */
+        width: 360px;
         margin-left: auto !important;
         margin-right: auto !important;
         text-align: center !important;
     }
 
     .about-about {
-        margin: 10px 40px 10px 30px !important;
+        width: 360px !important;
+        margin: 10px 25px 10px 35px !important;
+        text-align: center;
     }
-
 
     .about-projects {
-        margin: 10px 40px 10px 10px !important;
-        /* margin-left: 20px !important; */
+        margin: 10px 25px 10px 10px !important;
     }
     .about-social-skills {
-        margin-left: 40px !important;
+        margin-left: 25px !important;
         margin: 10px !important;
-        /* margin-left: 20px !important; */
     }
 
     .info-card {
-        margin: 5px !important;
+        margin: 5px auto !important;
     }
 
     .blog {
@@ -130,15 +128,15 @@
     
     
     .project {
-        width: 290px !important;
+        width: 330px !important;
         height: auto !important;
     }
     .project h1 , .project p {
-        width: 290px !important;
+        width: 320px !important;
         margin: 5px !important;
     }
     a.project {
-        width: 290px !important;
+        width: 320px !important;
     }
     div.project {
         margin: 20px 0 !important;    
@@ -153,7 +151,7 @@
     }
 
     .contact h1, .contact p {
-    font-size: 16px !important;
+    font-size: 26px !important;
     }
     
     .input {

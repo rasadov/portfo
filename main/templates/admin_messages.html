@@ -1,0 +1,53 @@
+{% if current_user.is_authenticated %}
+{% extends 'base.html' %}
+{% block title %}
+<title>messages</title>
+{% endblock %}
+
+{% block content %}
+
+    <div style="text-align: center;">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.submit(class='remove-btn', value='Remove All') }}
+        </form>
+    </div>
+
+    <div class="edit-card" id="edit-1"> <!-- Blog -->
+        <div> <!-- blog management form -->
+            {% if amount_of_messages != 0 %}
+            {% for i in messages %}
+            <div class="blog" style="color: white;  max-width: 1000px; text-align: center; margin: 50px auto !important;">
+                <div style="height: 20px;"></div>
+                <h1>Name: {{ i.name }}</h1>
+                <h1>Surname: {{ i.surname }}</h1>
+                <h1>Email: {{ i.email }}</h1>
+
+                <p style="width: 480px !important; height: auto !important; margin: 10px auto !important;">Message:<br>{{ i.message }}</p>
+                <div style="height: 1px;"></div>
+                <div style="height: 20px;"></div>
+            </div>
+
+
+            {% endfor %}
+
+            {% else %}
+            <div class="blog">
+                <div style="text-align: center; height: auto; color: white; margin-top: 20px">
+                    <div style="height: 20px;"></div>
+                    <h1>Blog is empty at current moment</h1>
+                    <div style="height: 20px;"></div>
+                </div>
+            </div>
+
+            {% endif %}
+        </div>
+
+
+    </div>
+<script src="../static/script-admin.js"></script>
+<link rel="stylesheet" href="../static/style-admin.css">
+{% endblock %}
+{% else %}
+<h1>404 Error</h1>
+{% endif %}

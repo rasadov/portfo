@@ -14,6 +14,7 @@ from main.forms import (
     LoginForm,
     RemoveArticleForm,
     RemoveProjectForm,
+    CleanMessages
 )
 from main.models import Projects, Articles, Admin, Contact
 from flask_login import login_user, current_user
@@ -64,6 +65,20 @@ def my_home():
         add_to_database(message)
         return redirect(url_for("thank_you"))
     return "<h1>Fill the form properly</h1>"
+
+
+@app.route("/messages-admin", methods=["GET", "POST"])
+def messages():
+    messages = Contact.query.order_by(desc(Contact.id))
+    form = CleanMessages()
+
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            for i in messages:
+                db.session.delete(i)
+            db.session.commit()
+
+    return render_template("admin_messages.html", messages=messages, current_user=current_user, form=form)
 
 
 @app.route("/create-blog", methods=["GET", "POST"])

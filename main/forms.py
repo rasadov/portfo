@@ -13,7 +13,7 @@ from wtforms.validators import DataRequired, Email, Length
 class Message(FlaskForm):
     name = StringField(label="Name", validators=[DataRequired(), Length(min=2, max=40)])
     surname = StringField(label="Surname", validators=[Length(min=2, max=40)])
-    email = StringField(label="Email", validators=[DataRequired(), Email()])
+    email = StringField(label="Email", validators=[DataRequired()])
     message = StringField(label="Message", validators=[DataRequired()])
     submit = SubmitField(label="Submit")
 
@@ -40,6 +40,8 @@ class RemoveProjectForm(FlaskForm):
     id = IntegerField()
     submit = SubmitField(label="Remove Project")
 
+class CleanMessages(FlaskForm):
+    submit = SubmitField(label="Remove Project")
 
 class LoginForm(FlaskForm):
     def validate_username(self, username_to_check):

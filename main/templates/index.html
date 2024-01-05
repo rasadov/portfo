@@ -18,7 +18,7 @@
             <p class="fade-in-right">
                 I study at ADA university in Computer Science major. Before getting to university,
                 I worked and still work on different projects in Python. I have worked on Data scraping, Back-end development, Scripting, Automation, Machine Learning and Neural Networks.
-                Since I got to university, I also started learning C++ and Java. 
+                Since I got to university, I also started learning C++ and Java.
             </p>
             <div class="fade-in-left">
                 <a href="#link-for-nav-3" class="nav-link" data-nav="nav-3">
@@ -28,7 +28,7 @@
                 </a>
             </div>
         </div>
-        
+
     </div>
     <nav class="nav">
         <div class="left">
@@ -118,7 +118,7 @@
         <div class="blog" style="color: white;  max-width: 1000px; text-align: center;">
             <div style="height: 20px;"></div>
             <h1>{{ i.title }}</h1>
-            <p style="width: 480px !important; height: auto !important; margin: 10px auto !important;">{{ i.text }}</p>
+            <p class = "blog-description">{{ i.text }}</p>
             <div style="height: 1px;"></div>
             <div style="height: 20px;"></div>
             <div>
@@ -127,42 +127,42 @@
         {% endfor %}
         {% endif %}
     </div>
-
+    </div>
 
     <!-- Contact -->
-    <div class="Contact page-item fade-in-up hidden" id="nav-3">
-        <div class="contact" id="link-for-nav-3">
-            <div style="height: 20px;"></div>
-            <div class="container-element">
-                <div style="text-align: center; height: auto; color: white; margin-left: auto; margin-right: auto;">
-                    <form method="POST" class="form-create" style="color: white;">
-                    {{ form.hidden_tag() }}
-                    <h1>Contact Form</h1>
-                    <p>Feel free to reach out to me by filling this form:</p>
-                    <div class="input">
-                        {{ form.name(class="input", placeholder="Name") }}
-                    </div>
-                    <div class="input">
-                        {{ form.surname(class="input", placeholder="Surname") }}
-                    </div>
-                    <div class="input">
-                        {{ form.email(class="input", placeholder="Email") }}
-                    </div>
-                    <div class="input" style="height: 230px;">
-                        <textarea name="message" class="input-message"  placeholder="Message"></textarea>
-                    </div>
-                    <div>
-                        {{ form.submit(class="submit-btn") }}
-                    </div>
-                    </form>
-                    <p>I look forward to connecting with you!</p>
+<div class="Contact page-item fade-in-up hidden" id="nav-3">
+    <div class="contact" id="link-for-nav-3">
+        <div style="height: 20px;"></div>
+        <div class="container-element">
+            <div style="text-align: center; height: auto; color: white; margin-left: auto; margin-right: auto;">
+                <form method="POST" class="form-create" style="color: white;">
+                {{ form.hidden_tag() }}
+                <h1>Contact Form</h1>
+                <p>Feel free to reach out to me by filling this form:</p>
+                <div class="input">
+                    {{ form.name(class="input", placeholder="Name") }}
                 </div>
+                <div class="input">
+                    {{ form.surname(class="input", placeholder="Surname") }}
+                </div>
+                <div class="input">
+                    {{ form.email(class="input", placeholder="Email") }}
+                </div>
+                <div class="input" style="height: 230px;">
+                    <textarea name="message" class="input-message"  placeholder="Message"></textarea>
+                </div>
+                <div>
+                    {{ form.submit(class="submit-btn") }}
+                </div>
+                </form>
+                <p>I look forward to connecting with you!</p>
             </div>
-            <div style="height: 20px;"></div>
         </div>
+        <div style="height: 20px;"></div>
     </div>
-    
+</div>
+
 
     <script src="../static/script.js"></script>
-    
+
 {% endblock %}

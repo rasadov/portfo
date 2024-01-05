@@ -7,13 +7,13 @@
         height: 60px !important;
         margin: 0px !important;
     }
-    
+
     .home {
         margin: 0px auto 50px auto !important;
         display: block !important;
         /* width: 260px; */
     }
-    
+
     .home-up {
         margin: auto !important;
         width: 100% !important;
@@ -34,14 +34,14 @@
         margin-top: 30px !important;
         background: rgb(0, 123, 255) !important;
     }
-    
+
 
     .home h1 {
         font-size: 40px !important;
         width: 260px !important;
 
     }
-    
+
     .home p {
         width: 250px !important;
         font-size: 20px !important;
@@ -49,14 +49,14 @@
     }
 
     .home-down p {
-        width: 400px !important;
+        width: 360px !important;
     }
 
     .nav {
         width: 98% !important;
         margin-bottom: 60px !important;
         padding: 15px 0px 15px 10px !important;
-        
+
     }
 
     .nav-link {
@@ -75,7 +75,7 @@
         display: block !important;
         margin: auto;
     }
-    
+
     .container-element {
         display: flex;
         margin-bottom: 12px !important;
@@ -84,7 +84,7 @@
     .container-links {
         height: 30px;
     }
-    
+
     .info-card {
         width: 360px !important;
         margin: auto;
@@ -107,7 +107,7 @@
     .container-links a {
         font-size: 25px !important;
     }
-    
+
     .About {
         width: 360px;
         margin-left: auto !important;
@@ -137,8 +137,13 @@
         width: 340px !important;
     }
 
-    
-    
+    .blog-description {
+        width: 280px !important;
+        height: auto !important;
+        margin: 10px auto !important;
+    }
+
+
     .project {
         margin: auto;
         width: 320px !important;
@@ -155,13 +160,13 @@
     }
 
     .proj {
-        width: 360px !important; 
+        width: 360px !important;
     }
 
     div.project {
-        border-radius: 30px !important;    
+        border-radius: 30px !important;
     }
-    
+
     .contact  {
     height: auto;
     width: 350px !important;
@@ -173,20 +178,20 @@
     .contact h1, .contact p {
     font-size: 26px !important;
     }
-    
+
     .input {
         width: 240px !important;
         height: 30px;
         font-size: 15px;
     }
-    
+
     div.input {
         margin: 25px;
         margin-left: auto;
         margin-right: auto;
     }
-    
-    
+
+
     .input-message {
         width: 240px !important;
         font-size: 20px;
@@ -221,7 +226,7 @@
 html{
 
     scroll-behavior: smooth;
-    
+
     }
 
 body {
@@ -229,6 +234,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #202020;
+    overflow-x: hidden;
 }
 
 
@@ -237,7 +243,7 @@ body {
 }
 
 .right {
-    text-align: right; 
+    text-align: right;
 }
 
 .center {
@@ -245,7 +251,7 @@ body {
 }
 
 .left {
-    text-align: left; 
+    text-align: left;
 }
 
 div.home {
@@ -255,9 +261,9 @@ div.home {
 }
 
 .home-up {
-    text-align: center; 
+    text-align: center;
     width: 1000px;
-    margin-left: 100px; 
+    margin-left: 100px;
     margin-right: 100px;
 }
 
@@ -291,19 +297,19 @@ div.home {
     border-radius: 45px;
     background: #2f2f2f;
     border: #202020;
-    transition: transform 0.5s ease-in-out;    
+    transition: transform 0.5s ease-in-out;
 }
 
 .home button:hover {
     transform: scale(1.1);
     background: white;
-    color: #2f2f2f;  
+    color: #2f2f2f;
     cursor:pointer;
 }
 
 .home button:active {
     background: rgb(0, 123, 247);
-    color: #ffffff;    
+    color: #ffffff;
 }
 
 .container {
@@ -323,7 +329,7 @@ div.home {
 .info-link {
     text-decoration: none;
     cursor: pointer;
-    transition: font-size 0.5s ease-in-out, text-shadow 0.3s ease-in-out;    
+    transition: font-size 0.5s ease-in-out, text-shadow 0.3s ease-in-out;
     width: 29px;
 }
 
@@ -360,8 +366,8 @@ a.project{
 }
 
 .proj {
-    width: 500px; 
-    text-align: center; 
+    width: 500px;
+    text-align: center;
     margin: 20px auto;
 }
 
@@ -392,6 +398,11 @@ div.project{
     border-radius: 15px;
 }
 
+.blog-description {
+    width: 480px;
+    height: auto;
+    margin: 10px auto;
+}
 
 .contact {
     height: auto;
@@ -430,8 +441,8 @@ nav .active-link {
 }
 
 .nav-link:hover {
-    text-shadow: 0 0 15px;   
-}   
+    text-shadow: 0 0 15px;
+}
 
 .input {
     width: 400px;
